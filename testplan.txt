@@ -1,0 +1,27 @@
+Test Plan 
+We are going to do 5000 tests of search on various array sizes starting at 500. We arbitrarily choose 5 as the target value. Since the multiprocessing and multithreaded programs must wait for all of their children before they can terminate the parent, this doesn't matter. These tests will determine if multithreading is better than multiprocessing and how well these two methods scale over larger arrays. For these tests, we use the capped worker subarray size of 250.
+
+Test A: 5000 passes on an array of 500
+Test B: 5000 passes on an array of 1000
+Test C: 5000 passes on an array of 1001
+Test D: 5000 passes on an array of 2000
+Test E: 5000 passes on an array of 4000
+Test F: 5000 passes on an array of 6000
+Test G: 5000 passes on an array of 8000
+Test H: 5000 passes on an array of 10000
+Test I: 5000 passes on an array of 12000
+Test J: 5000 passes on an array of 14000
+Test K: 5000 passes on an array of 16000
+Test L: 5000 passes on an array of 18000
+Test M: 5000 passes on an array of 20000
+
+We are also running 5000 passes on tests of worker counts. These worker count tests are as follows:
+
+Test A: 5000 passes on an array of size 250, splitting every 250 indices, generating 1 workers.
+Test B: 5000 passes on an array of size 250, splitting every 125 indices, generating 2 workers.
+Test C: 5000 passes on an array of size 250, splitting every 84 indices, generating 3 workers.
+Test D: 5000 passes on an array of size 250, splitting every 63 indices, generating 4 workers.
+Test E: 5000 passes on an array of size 250, splitting every 50 indices, generating 5 workers.
+Test F: 5000 passes on an array of size 250, splitting every 42 indices, generating 6 workers.
+
+We will keep track of all the times taken by whether we were using threading or processing and calculate the appropriate values for min, max, average, and standard deviation.
